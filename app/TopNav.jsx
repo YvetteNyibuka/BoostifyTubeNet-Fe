@@ -15,11 +15,16 @@ const TopNav = ({ toggleSidebar }) => {
         <h1 className="flex text-4xl text-[#191943] justify-center my-auto">
           BT <span className="flex text-[#EDB62E]">Net</span>
         </h1>
-        <div className="flex border border-gray-400 px-2 rounded-md">
+        <Link href={"/withdraw"}>
+          <p className="flex text-4xl text-black justify-center my-auto">
+            $ 0.041
+          </p>
+        </Link>
+        <div className="border border-gray-400 px-2 rounded-md hidden sm:flex">
           <input
             type="text"
             placeholder="Search"
-            className="flex outline-none border-none"
+            className="outline-none border-none "
           />
           <IoIosSearch className="flex ml-2 my-auto justify-center" />
         </div>

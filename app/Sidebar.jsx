@@ -1,10 +1,22 @@
 "use client";
 import React from "react";
-import { FaHome, FaUpload, FaFire, FaUsers } from "react-icons/fa";
+import {
+  FaHome,
+  FaUpload,
+  FaFire,
+  FaUsers,
+  FaAward,
+  FaRegFileVideo,
+} from "react-icons/fa";
 import { BiSolidReport } from "react-icons/bi";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
-import { SiFuturelearn } from "react-icons/si";
 import Link from "next/link";
+import {
+  MdMovieCreation,
+  MdCurrencyExchange,
+  MdPayments,
+  MdMessage,
+} from "react-icons/md";
 
 const Sidebar = ({ isSidebarOpen }) => {
   const sideBarLinks = [
@@ -28,13 +40,13 @@ const Sidebar = ({ isSidebarOpen }) => {
     },
     {
       icon: <FaFire style={{ color: "black" }} />,
-      path: "/allvideos",
-      name: "Videos",
-      role: "admin",
+      path: "/paidvideos",
+      name: "Paid Videos",
+      role: "viewer",
     },
     {
       icon: <BiSolidReport style={{ color: "black" }} />,
-      path: "/report",
+      path: "/reporting",
       name: "Reportings",
       role: "admin",
     },
@@ -45,10 +57,34 @@ const Sidebar = ({ isSidebarOpen }) => {
       role: "viewer",
     },
     {
-      icon: <SiFuturelearn style={{ color: "black" }} />,
+      icon: <FaAward style={{ color: "black" }} />,
       path: "/topearner",
       name: "Top Earners",
       role: "viewer",
+    },
+    {
+      icon: <FaRegFileVideo style={{ color: "black" }} />,
+      path: "/myvideos",
+      name: "My Videos",
+      role: "youtuber",
+    },
+    {
+      icon: <MdMovieCreation style={{ color: "black" }} />,
+      path: "/allvideos",
+      name: "All Videos",
+      role: "admin",
+    },
+    {
+      icon: <MdMessage style={{ color: "black" }} />,
+      path: "/contact",
+      name: "Contact Us",
+      role: "viewer",
+    },
+    {
+      icon: <MdPayments style={{ color: "black" }} />,
+      path: "/payment",
+      name: "Payment",
+      role: "youtuber",
     },
   ];
 
@@ -69,18 +105,18 @@ const Sidebar = ({ isSidebarOpen }) => {
 
   return (
     <div
-      className={`min-w-[20%] w-fit transition-all duration-300 ease-in-out min-h-screen flex flex-col h-fit bg-white fixed mt-10 shadow-md ${
+      className={`min-w-[20%] overflow-y-auto pb-20 max-h-screen  w-fit transition-all duration-300 ease-in-out min-h-screen flex flex-col h-fit bg-white fixed mt-10 border-r border-gray-800 ${
         isSidebarOpen ? "transition-all duration-300 ease-in-out" : "hidden"
       }`}
     >
-      <ul className="flex flex-col justify-between w-full m-auto  p-3 mt-6 h-full">
+      <ul className="flex flex-col justify-between w-full m-auto  p-3 mt-6 ">
         {sideBarLinks?.map((link, index) => (
           <li key={index} className="flex flex-col items-start  h-12">
             <Link href={link.path} className="flex w-full gap-[1rem] ">
-              <p className="text-white font-semibold my-auto items-center flex text-base ml-2">
+              <p className="font-semibold my-auto items-center flex text-base ml-2">
                 {link.icon}
               </p>
-              <p className="font-semibold  justify-start  text-base ml-2">
+              <p className="font-semibold  justify-start  text-base ml-2 text-black ">
                 {link.name}
               </p>
             </Link>
