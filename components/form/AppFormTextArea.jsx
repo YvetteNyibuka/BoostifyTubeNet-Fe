@@ -1,4 +1,5 @@
 import { useFormContext } from "react-hook-form";
+import ErrorMessage from "./ErrorMessage";
 
 export default function AppFormTextArea({
   label,
@@ -16,7 +17,6 @@ export default function AppFormTextArea({
     <div className=" flex  flex-col">
       <label htmlFor="">{label}</label>
       <textarea
-   
         {...register(name)}
         name={name}
         {...rest}
@@ -24,7 +24,7 @@ export default function AppFormTextArea({
         className="input input-bordered flex items-center gap-2 h-[7rem] rounded-[5px]"
       />
 
-      {errors[name] && <p>{errors[name].message}</p>}
+      {errors[name] && <ErrorMessage error={errors[name].message} />}
     </div>
   );
 }

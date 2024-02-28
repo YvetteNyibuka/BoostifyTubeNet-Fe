@@ -1,11 +1,7 @@
 import { useFormContext } from "react-hook-form";
+import ErrorMessage from "./ErrorMessage";
 
-export default function AppFormInput({
-  label,
-  type,
-  placeholder,
-  name,
-}) {
+export default function AppFormInput({ label, type, placeholder, name }) {
   const {
     register,
     formState: { errors },
@@ -19,10 +15,10 @@ export default function AppFormInput({
         {...register(name)}
         name={name}
         placeholder={placeholder}
-        className="input input-bordered flex items-center gap-2 h-[2.4rem] rounded-[5px]" 
+        className="input input-bordered flex items-center gap-2 h-[2.4rem] rounded-[5px]"
       />
 
-      {errors[name] && <p>{errors[name].message}</p>}
+      {errors[name] && <ErrorMessage error={errors[name].message} />}
     </div>
   );
 }

@@ -17,10 +17,14 @@ export default function AppForm({
   });
 
   return (
-    <FormProvider {...method}  >
-      <form onSubmit={method.handleSubmit(onSubmit)}  method="POST" className=" flex flex-col gap-1">
+    <FormProvider {...method}>
+      <form
+        onSubmit={method.handleSubmit(onSubmit)}
+        method="POST"
+        className=" flex flex-col gap-1"
+      >
         {children}
-        <SubmitButton title={SubmitTitle}  />
+        <SubmitButton title={SubmitTitle} />
       </form>
     </FormProvider>
   );
@@ -29,7 +33,12 @@ export default function AppForm({
 const SubmitButton = ({ title }) => {
   return (
     <>
-      <button className="btn btn-block bg-yellow-400 hover:bg-blue-950 hover:text-white h-4" type="submit">{title}</button>
+      <button
+        className="btn mt-3 btn-block bg-yellow-400 hover:bg-blue-950 hover:text-white h-4"
+        type="submit"
+      >
+        {title}
+      </button>
     </>
   );
 };
