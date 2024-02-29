@@ -3,7 +3,7 @@
 import AppFormInputDate from "@/components/form/AppFormInputDate";
 import AppFormSelect from "@/components/form/AppFormSelect";
 import AppForm from "@/components/form/Appform";
-import AppFormInput from "@/components/form/Appforminput";
+import AppFormInput from "@/components/form/AppFormInput";
 import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
