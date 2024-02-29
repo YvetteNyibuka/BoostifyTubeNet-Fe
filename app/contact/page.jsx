@@ -62,7 +62,7 @@ export default function Contact() {
 
         <div className="  flex gap-7  ">
           <div className=" mt-1 flex flex-col gap-9">
-            <h2 className=" font-bold">Let's get in Touch with You!</h2>
+            <h2 className=" font-bold">Let us get in Touch with You!</h2>
             <p className=" flex gap-2">
               <IoLocationSharp className=" mt-1" />
               Kigali KN403
