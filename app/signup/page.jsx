@@ -7,6 +7,7 @@ import AppForm from "@/components/form/Appform";
 import AppFormInput from "@/components/form/Appforminput";
 import axios from "axios";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import * as Yup from "yup";
@@ -52,7 +53,7 @@ export default function Home() {
   return (
     <div className=" flex  justify-center ">
       <div className="shadow-lg shadow-cyan-500/50 p-10 ">
-        <p className=" scroll-mx-7">Create account!</p>
+        <p className=" scroll-mx-7  flex justify-center text-lg font-bold">Create account!</p>
         <AppForm
           SubmitTitle={"Signup"}
           validationSchema={loginSchema}
@@ -144,6 +145,7 @@ export default function Home() {
             />
           </div>
         </AppForm>
+        <p>If Your Have any Account Please Login Here!! <Link href="/login" className=" text-amber-500 hover:text-cyan-700">Login</Link></p>
       </div>
     </div>
   );

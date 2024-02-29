@@ -16,10 +16,12 @@ export default function AppForm({
     resolver: yupResolver(validationSchema),
   });
 
+
+  
   return (
     <FormProvider {...method}>
       <form
-        onSubmit={method.handleSubmit(onSubmit)}
+        onSubmit={(e) => handleSubmit(e)}
         method="POST"
         className=" flex flex-col gap-1"
       >

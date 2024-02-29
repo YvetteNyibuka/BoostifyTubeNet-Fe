@@ -2,6 +2,7 @@
 
 import AppFormInput from "@/components/form/AppFormInput";
 import AppForm from "@/components/form/Appform";
+import Link from "next/link";
 import * as Yup from "yup";
 
 
@@ -17,8 +18,8 @@ export default function Login() {
 
   return (
     <div className=" grid grid-cols gap-3 justify-center">
-      <div className=" w-80 shadow-lg shadow-cyan-500/50  p-10">
-        <p>Login Here?</p>
+      <div className="  w-96 shadow-lg shadow-cyan-500/50  p-10">
+        <p className="  flex  justify-center text-lg font-bold">Login Here?</p>
         <AppForm
           SubmitTitle={"Login"}
           validationSchema={loginSchema}
@@ -40,6 +41,7 @@ export default function Login() {
             />
           </div>
         </AppForm>
+        <p>New to the site? <Link href="/signup" className=" text-amber-500 hover:text-cyan-700">SignUp</Link></p>
       </div>
     </div>
   );
